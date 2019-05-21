@@ -17,9 +17,7 @@ router.post('/article', async function(req, res) {
       body: body
     });
     await newArticle.save();
-    return res.json({
-      message: "POST /article"
-    });
+    return res.json(newArticle);
   } catch (e) {
     console.log(e);
     return res.status(403).json({
