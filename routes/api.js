@@ -49,18 +49,6 @@ router.get('/article/:article_id', async function(req, res) {
     });
   }
 });
-/* Get an/many articles */
-router.get('/articles', async function(req, res) {
-  try {
-    var articles = await Article.find({});
-    return res.json(articles);
-  } catch (e) {
-    console.log(e);
-    return res.status(403).json({
-      message: e.message
-    });
-  }
-});
 /* Update an article */
 router.put('/article/:article_id', async function(req, res) {
   try {
